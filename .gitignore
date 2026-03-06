@@ -1,0 +1,12 @@
+# build output
+main
+*.o
+*.out
+
+# editors
+*.swp
+*~
+*.un~
+
+# build systems
+build/
