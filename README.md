@@ -11,7 +11,7 @@ A small interpreter written while learning C++ and language implementation.
 
 ## Build
 
-cmake -B build -DCMAKE_BUILD_TYPE=Debug
+cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 
 ## Run
