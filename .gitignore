@@ -1,5 +1,6 @@
 # build output
 main
+interpreter
 *.o
 *.out
 
@@ -8,5 +9,3 @@ main
 *~
 *.un~
 
-# build systems
-build/

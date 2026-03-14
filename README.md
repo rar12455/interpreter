@@ -11,8 +11,7 @@ A small interpreter written while learning C++ and language implementation.
 
 ## Build
 
-cmake -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build
+g++ -Wall -Wextra -std=c++23 -lreadline -O3 -march=native main.cpp -o interpreter && ./interpreter
 
 ## Run
 

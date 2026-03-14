@@ -147,27 +147,36 @@ exec_system_function(std::string system_command)
 }
 
 bool
-eval(std::string &__user_input)
+eval(std::string &t_user_input)
 {
-        if (__user_input == "exit")
+        std::string prefix_system = "sys:";
+
+        if (t_user_input == "exit")
+        {
                 return false;
-        ;
+        }
 
-        if (!__user_input.empty())
-                add_history(__user_input.c_str());
+        if (!t_user_input.empty())
+        {
+                add_history(t_user_input.c_str());
+        }
 
-        if (__user_input == "clear")
+        if (t_user_input == "clear")
         {
                 std::cout << "\033[2J\033[H";
         }
-        std::string prefix_system = "sys:";
-        if (__user_input == "help")
-                print_repl_help();
-        if (__user_input.starts_with(prefix_system))
+
+        if (t_user_input == "help")
         {
-                __user_input.erase(0, prefix_system.length());
-                exec_system_function(__user_input);
+                print_repl_help();
         }
+
+        if (t_user_input.starts_with(prefix_system))
+        {
+                t_user_input.erase(0, prefix_system.length());
+                exec_system_function(t_user_input);
+        }
+
         return true;
 }
 
